@@ -1,0 +1,27 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="blueGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2563eb"></stop>
+      <stop offset="100%" stop-color="#0ea5e9"></stop>
+    </linearGradient>
+    <linearGradient id="orangeGradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f97316"></stop>
+      <stop offset="100%" stop-color="#fb923c"></stop>
+    </linearGradient>
+  </defs>
+
+  <!-- C形外环 -->
+  <path d="M52 12 A24 24 0 1 0 52 52" fill="none" stroke="url(#blueGradient)" stroke-width="5" stroke-linecap="round"></path>
+
+  <!-- 地球网格 -->
+  <g stroke="#2563eb" stroke-width="1.5" fill="none" opacity="0.8">
+    <ellipse cx="32" cy="32" rx="10" ry="10"></ellipse>
+    <path d="M22 32h20"></path>
+    <path d="M32 22v20"></path>
+  </g>
+
+  <!-- 上升箭头 -->
+  <path d="M20 38 C30 30, 40 30, 50 20" stroke="url(#orangeGradient)" stroke-width="3.5" fill="none" stroke-linecap="round"></path>
+  <polygon points="48,18 54,20 50,24" fill="#f97316"></polygon>
+
+</svg>
