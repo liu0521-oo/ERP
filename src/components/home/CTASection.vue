@@ -9,40 +9,28 @@
           开启您的跨境电商之旅
         </h2>
         <p
-          class="text-lg text-white/80 mb-8"
+          class="text-lg text-white/80 mb-16"
           data-aos="fade-up"
           data-aos-delay="100"
         >
-          立即注册，享受14天免费试用。专业团队全程指导，让您的跨境业务起步更轻松。
+          一站式跨境电商ERP解决方案，整合多平台管理、智能订单处理、库存同步、财务对账等核心功能。专业团队全程服务支持，助力企业降本增效，实现跨境业务快速增长。
         </p>
-        <div
-          class="flex flex-col sm:flex-row gap-4 justify-center"
-          data-aos="fade-up"
-          data-aos-delay="200"
-        >
-          <router-link to="/platforms" class="btn bg-white text-primary-600 hover:bg-neutral-50 text-lg">
-            免费试用14天
-          </router-link>
-          <router-link to="/about" class="btn bg-transparent border-2 border-white text-white hover:bg-white/10 text-lg">
-            联系我们
-          </router-link>
-        </div>
-        <div class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
+          <div data-aos="fade-up" data-aos-delay="200">
+            <div class="text-3xl font-bold mb-1">10W+</div>
+            <div class="text-white/70">服务商家</div>
+          </div>
+          <div data-aos="fade-up" data-aos-delay="300">
+            <div class="text-3xl font-bold mb-1">50+</div>
+            <div class="text-white/70">对接平台</div>
+          </div>
           <div data-aos="fade-up" data-aos-delay="400">
-            <div class="text-2xl font-bold">免费</div>
-            <div class="text-white/70 text-sm mt-1">14天试用</div>
+            <div class="text-3xl font-bold mb-1">99.9%</div>
+            <div class="text-white/70">系统稳定性</div>
           </div>
           <div data-aos="fade-up" data-aos-delay="500">
-            <div class="text-2xl font-bold">24/7</div>
-            <div class="text-white/70 text-sm mt-1">技术支持</div>
-          </div>
-          <div data-aos="fade-up" data-aos-delay="600">
-            <div class="text-2xl font-bold">安全</div>
-            <div class="text-white/70 text-sm mt-1">数据加密</div>
-          </div>
-          <div data-aos="fade-up" data-aos-delay="700">
-            <div class="text-2xl font-bold">灵活</div>
-            <div class="text-white/70 text-sm mt-1">按需付费</div>
+            <div class="text-3xl font-bold mb-1">24/7</div>
+            <div class="text-white/70">专业客服</div>
           </div>
         </div>
       </div>

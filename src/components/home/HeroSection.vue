@@ -125,7 +125,7 @@ const slides: Slide[] = [
     overlay: 'from-primary-900/70 to-secondary-900/50',
     title: '桓晟',
     subtitle: '跨境电商选品首选',
-    description: '一站式跨境电商选品解决方案，助您轻松管理多平台订单、智能库存、精准数据分析，实现全球业务快速增长。'
+    description: '一站式跨境电商选品解决方案，助您轻松管理多平台订单、智能库存，实现全球业务快速增长。'
   },
   {
     image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&q=80',
@@ -137,9 +137,9 @@ const slides: Slide[] = [
   {
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80',
     overlay: 'from-secondary-900/60 to-neutral-900/60',
-    title: '智能分析',
-    subtitle: '数据驱动决策',
-    description: '可视化数据看板，多维度销售分析，精准预测销售趋势，辅助科学决策。'
+    title: '高效运营',
+    subtitle: '降本增效首选',
+    description: '智能订单处理，多仓库统一管理，财务自动对账，大幅提升运营效率。'
   }
 ]
 

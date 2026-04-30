@@ -7,49 +7,59 @@
         <div class="container">
           <h1 class="text-3xl font-bold mb-8">订单管理</h1>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            <div class="card p-6">
-              <div class="flex items-center justify-between">
-                <div>
-                  <p class="text-sm text-neutral-500 mb-1">总订单数</p>
-                  <p class="text-2xl font-bold">{{ stats.total }}</p>
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
+            <div class="card p-5">
+              <div class="flex flex-col items-center text-center">
+                <div class="w-10 h-10 bg-primary-100 rounded-xl flex items-center justify-center mb-2">
+                  <span class="text-xl">📦</span>
                 </div>
-                <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center">
-                  <span class="text-2xl">📦</span>
-                </div>
+                <p class="text-xs text-neutral-500 mb-1">总订单数</p>
+                <p class="text-xl font-bold">200,170,459+</p>
               </div>
             </div>
-            <div class="card p-6">
-              <div class="flex items-center justify-between">
-                <div>
-                  <p class="text-sm text-neutral-500 mb-1">待处理</p>
-                  <p class="text-2xl font-bold text-orange-500">{{ stats.pending }}</p>
+            <div class="card p-5">
+              <div class="flex flex-col items-center text-center">
+                <div class="w-10 h-10 bg-orange-100 rounded-xl flex items-center justify-center mb-2">
+                  <span class="text-xl">⏰</span>
                 </div>
-                <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
-                  <span class="text-2xl">⏰</span>
-                </div>
+                <p class="text-xs text-neutral-500 mb-1">待处理</p>
+                <p class="text-xl font-bold text-orange-500">502,370</p>
               </div>
             </div>
-            <div class="card p-6">
-              <div class="flex items-center justify-between">
-                <div>
-                  <p class="text-sm text-neutral-500 mb-1">处理中</p>
-                  <p class="text-2xl font-bold text-blue-500">{{ stats.processing }}</p>
+            <div class="card p-5">
+              <div class="flex flex-col items-center text-center">
+                <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center mb-2">
+                  <span class="text-xl">🔄</span>
                 </div>
-                <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                  <span class="text-2xl">🔄</span>
-                </div>
+                <p class="text-xs text-neutral-500 mb-1">处理中</p>
+                <p class="text-xl font-bold text-blue-500">1,200,851</p>
               </div>
             </div>
-            <div class="card p-6">
-              <div class="flex items-center justify-between">
-                <div>
-                  <p class="text-sm text-neutral-500 mb-1">已发货</p>
-                  <p class="text-2xl font-bold text-green-500">{{ stats.shipped }}</p>
+            <div class="card p-5">
+              <div class="flex flex-col items-center text-center">
+                <div class="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center mb-2">
+                  <span class="text-xl">✅</span>
                 </div>
-                <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-                  <span class="text-2xl">✅</span>
+                <p class="text-xs text-neutral-500 mb-1">已发货</p>
+                <p class="text-xl font-bold text-green-500">3,506,246</p>
+              </div>
+            </div>
+            <div class="card p-5">
+              <div class="flex flex-col items-center text-center">
+                <div class="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center mb-2">
+                  <span class="text-xl">📬</span>
                 </div>
+                <p class="text-xs text-neutral-500 mb-1">已送达</p>
+                <p class="text-xl font-bold text-purple-500">190,080,452</p>
+              </div>
+            </div>
+            <div class="card p-5">
+              <div class="flex flex-col items-center text-center">
+                <div class="w-10 h-10 bg-red-100 rounded-xl flex items-center justify-center mb-2">
+                  <span class="text-xl">❌</span>
+                </div>
+                <p class="text-xs text-neutral-500 mb-1">已取消</p>
+                <p class="text-xl font-bold text-red-500">500,587</p>
               </div>
             </div>
           </div>
@@ -118,11 +128,10 @@ import { ref, computed } from 'vue'
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
 import FloatingContact from '@/components/FloatingContact.vue'
-import { orders, getOrderStats } from '@/mock/orders'
+import { orders } from '@/mock/orders'
 import type { Order } from '@/types'
 
 const filterStatus = ref('')
-const stats = getOrderStats()
 
 const filteredOrders = computed(() => {
   if (!filterStatus.value) return orders

@@ -115,12 +115,12 @@ export const orders: Order[] = [
 
 export const getOrderStats = () => {
   return {
-    total: orders.length,
-    pending: orders.filter(o => o.status === 'pending').length,
-    processing: orders.filter(o => o.status === 'processing').length,
-    shipped: orders.filter(o => o.status === 'shipped').length,
-    delivered: orders.filter(o => o.status === 'delivered').length,
-    cancelled: orders.filter(o => o.status === 'cancelled').length,
+    total: 200000000,
+    pending: 500000,
+    processing: 1200000,
+    shipped: 3500000,
+    delivered: 190800000,
+    cancelled: 500000,
     totalAmount: orders.reduce((sum, o) => sum + o.amount, 0)
   }
 }
