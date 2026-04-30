@@ -6,7 +6,7 @@
       <div class="section">
         <div class="container">
           <div class="text-center mb-16">
-            <h1 class="text-4xl sm:text-5xl font-bold mb-6">关于财通出海</h1>
+            <h1 class="text-4xl sm:text-5xl font-bold mb-6">关于桓晟</h1>
             <p class="text-lg text-neutral-600 max-w-2xl mx-auto">
               专注跨境电商选品领域，助力中国企业走向世界
             </p>
@@ -16,13 +16,13 @@
             <div>
               <h2 class="text-2xl font-bold mb-6">公司简介</h2>
               <p class="text-neutral-600 leading-relaxed mb-4">
-                财通出海成立于2018年，是一家专注于跨境电商选品系统研发的国家高新技术企业。公司总部位于深圳，在上海、广州、杭州设有分支机构。
+                桓晟成立于2018年，是一家专注于跨境电商选品系统研发的国家高新技术企业。公司总部位于郑州。
               </p>
               <p class="text-neutral-600 leading-relaxed mb-4">
                 我们致力于为跨境电商企业提供一站式解决方案，涵盖订单管理、库存管理、物流管理、财务结算、数据分析等全方位服务，帮助企业提升运营效率，降低管理成本。
               </p>
               <p class="text-neutral-600 leading-relaxed">
-                经过多年发展，财通出海已服务超过500家跨境电商企业，累计处理订单超过1亿单，成为跨境电商选品领域的领先品牌。
+                经过多年发展，桓晟已服务超过500家跨境电商企业，累计处理订单超过1亿单，成为跨境电商选品领域的领先品牌。
               </p>
             </div>
             <div class="card p-8">
@@ -60,7 +60,7 @@
               <div class="card p-6">
                 <div class="text-2xl font-bold text-primary-600 mb-3">2018</div>
                 <h3 class="font-semibold mb-2">公司成立</h3>
-                <p class="text-sm text-neutral-600">财通出海在深圳成立，专注跨境电商选品研发</p>
+                <p class="text-sm text-neutral-600">桓晟在郑州成立，专注跨境电商选品研发</p>
               </div>
               <div class="card p-6">
                 <div class="text-2xl font-bold text-primary-600 mb-3">2019</div>

@@ -95,7 +95,6 @@
       class="absolute bottom-8 left-1/2 -translate-x-1/2 z-30"
     >
       <div class="flex flex-col items-center gap-2">
-        <span class="text-white/60 text-sm">向下滚动查看更多</span>
         <svg class="w-6 h-6 text-white animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
         </svg>
@@ -124,7 +123,7 @@ const slides: Slide[] = [
   {
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&q=80',
     overlay: 'from-primary-900/70 to-secondary-900/50',
-    title: '财通出海',
+    title: '桓晟',
     subtitle: '跨境电商选品首选',
     description: '一站式跨境电商选品解决方案，助您轻松管理多平台订单、智能库存、精准数据分析，实现全球业务快速增长。'
   },

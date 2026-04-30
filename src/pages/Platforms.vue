@@ -39,8 +39,8 @@
               </div>
 
               <button
-                :class="platform.status === 'connected' ? 'bg-red-50 text-red-600 hover:bg-red-100' : 'btn-primary'"
-                class="w-full py-3 rounded-xl font-medium transition-all duration-300"
+                disabled
+                class="w-full py-3 rounded-xl font-medium transition-all duration-300 opacity-50 cursor-not-allowed bg-neutral-100 text-neutral-400 hover:bg-neutral-100"
               >
                 {{ platform.status === 'connected' ? '断开连接' : '立即连接' }}
               </button>

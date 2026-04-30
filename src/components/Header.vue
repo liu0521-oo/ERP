@@ -3,8 +3,8 @@
     <div class="container px-4 lg:px-8">
       <div class="flex items-center justify-between h-16 lg:h-[72px]">
         <router-link to="/" class="flex items-center space-x-3 group">
-          <img :src="logoUrl" alt="财通出海" class="h-9 lg:h-10 w-auto transition-transform duration-300 group-hover:scale-105" />
-          <span class="font-bold text-lg lg:text-xl text-neutral-900 group-hover:text-primary-600 transition-colors duration-300">财通出海</span>
+          <img :src="logoUrl" alt="桓晟" class="h-9 lg:h-10 w-auto transition-transform duration-300 group-hover:scale-105" />
+          <span class="font-bold text-lg lg:text-xl text-neutral-900 group-hover:text-primary-600 transition-colors duration-300">桓晟</span>
         </router-link>
 
         <nav class="hidden lg:flex items-center gap-1">

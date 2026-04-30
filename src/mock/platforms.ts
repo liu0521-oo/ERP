@@ -2,6 +2,14 @@ import type { Platform } from '@/types'
 
 export const platforms: Platform[] = [
   {
+    id: '9',
+    name: 'Ozone',
+    icon: '🔵',
+    status: 'connected',
+    ordersToday: 78,
+    ordersTotal: 12345
+  },
+  {
     id: '1',
     name: 'Amazon',
     icon: '🛒',

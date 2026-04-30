@@ -5,8 +5,8 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
             <div class="flex items-center space-x-2 mb-6">
-              <img :src="logoUrl" alt="财通出海" class="h-10 w-auto" />
-              <span class="font-bold text-xl">财通出海</span>
+              <img :src="logoUrl" alt="桓晟" class="h-10 w-auto" />
+              <span class="font-bold text-xl">桓晟</span>
             </div>
             <p class="text-neutral-400 text-sm leading-relaxed">
               专注为跨境电商企业提供专业选品解决方案，助力企业实现全球业务增长。
@@ -57,7 +57,7 @@
     <div class="border-t border-neutral-800">
       <div class="container py-6">
         <div class="flex flex-col sm:flex-row items-center justify-between text-sm text-neutral-500">
-          <p>&copy; 2024 财通出海. All rights reserved.</p>
+          <p>&copy; 2024 桓晟. All rights reserved.</p>
           <div class="flex space-x-6 mt-4 sm:mt-0">
             <a href="#" class="hover:text-white transition-colors">隐私政策</a>
             <a href="#" class="hover:text-white transition-colors">服务条款</a>

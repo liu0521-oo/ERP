@@ -5,37 +5,37 @@ const routes = [
     path: '/',
     name: 'Home',
     component: () => import('@/pages/Home.vue'),
-    meta: { title: '首页 - 财通出海' }
+    meta: { title: '首页 - 桓晟' }
   },
   {
     path: '/orders',
     name: 'Orders',
     component: () => import('@/pages/Orders.vue'),
-    meta: { title: '订单管理 - 财通出海' }
+    meta: { title: '订单管理 - 桓晟' }
   },
   {
     path: '/inventory',
     name: 'Inventory',
     component: () => import('@/pages/Inventory.vue'),
-    meta: { title: '库存管理 - 财通出海' }
+    meta: { title: '库存管理 - 桓晟' }
   },
   {
     path: '/analytics',
     name: 'Analytics',
     component: () => import('@/pages/Analytics.vue'),
-    meta: { title: '数据分析 - 财通出海' }
+    meta: { title: '数据分析 - 桓晟' }
   },
   {
     path: '/platforms',
     name: 'Platforms',
     component: () => import('@/pages/Platforms.vue'),
-    meta: { title: '多平台对接 - 财通出海' }
+    meta: { title: '多平台对接 - 桓晟' }
   },
   {
     path: '/about',
     name: 'About',
     component: () => import('@/pages/About.vue'),
-    meta: { title: '关于我们 - 财通出海' }
+    meta: { title: '关于我们 - 桓晟' }
   }
 ]
 
@@ -52,7 +52,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, _from, next) => {
-  document.title = to.meta.title as string || '财通出海'
+  document.title = to.meta.title as string || '桓晟'
   next()
 })
 
