@@ -122,11 +122,11 @@
                     <td class="px-5 py-4 text-sm text-neutral-500 hidden sm:table-cell">{{ item.warehouse }}</td>
                     <td class="px-5 py-4 text-sm font-medium text-neutral-900">¥{{ item.price.toFixed(2) }}</td>
                     <td class="px-5 py-4">
-                      <span :class="getStatusClass(item.status)" class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium">
+                      <span :class="getInventoryStatusClass(item.status)" class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium">
                         <span v-if="item.status === 'normal'" class="w-1.5 h-1.5 mr-1.5 rounded-full bg-green-500"></span>
                         <span v-if="item.status === 'low'" class="w-1.5 h-1.5 mr-1.5 rounded-full bg-orange-500"></span>
                         <span v-if="item.status === 'out'" class="w-1.5 h-1.5 mr-1.5 rounded-full bg-red-500"></span>
-                        {{ getStatusText(item.status) }}
+                        {{ getInventoryStatusText(item.status) }}
                       </span>
                     </td>
                   </tr>
@@ -184,6 +184,7 @@ import Footer from '@/components/Footer.vue'
 import FloatingContact from '@/components/FloatingContact.vue'
 import { inventory, getInventoryStats } from '@/mock/inventory'
 import type { Inventory } from '@/types'
+import { formatNumber, getInventoryStatusClass, getInventoryStatusText } from '@/utils/format'
 
 const searchKeyword = ref('')
 const filterCategory = ref('')
@@ -234,21 +235,22 @@ const formatNumber = (num: number): string => {
   return num.toString()
 }
 
-const getStatusClass = (status: string) => {
-  const classes = {
-    normal: 'bg-green-100 text-green-700',
-    low: 'bg-orange-100 text-orange-700',
-    out: 'bg-red-100 text-red-700'
-  }
-  return classes[status as keyof typeof classes] || 'bg-neutral-100 text-neutral-700'
-}
+const warehouseStats = computed(() => {
+  const counts = warehouses.map(wh => ({
+    name: wh,
+    count: inventory.filter(i => i.warehouse === wh).length
+  }))
+  const maxCount = Math.max(...counts.map(c => c.count))
+  return counts.map(c => ({
+    ...c,
+    percent: (c.count / maxCount) * 100
+  }))
+})
 
-const getStatusText = (status: string) => {
-  const texts = {
-    normal: '正常',
-    low: '库存不足',
-    out: '缺货'
-  }
-  return texts[status as keyof typeof texts] || status
-}
+const categoryStats = computed(() => {
+  return categories.map(cat => ({
+    name: cat,
+    count: inventory.filter(i => i.category === cat).length
+  })).sort((a, b) => b.count - a.count)
+})
 </script>

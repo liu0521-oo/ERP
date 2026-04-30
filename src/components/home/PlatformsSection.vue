@@ -8,17 +8,19 @@
         </p>
       </div>
 
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
         <div
-          v-for="(platform, index) in platforms"
+          v-for="(platform, index) in displayPlatforms"
           :key="platform.id"
-          class="card p-6 text-center hover:shadow-medium transition-all duration-300"
+          class="card p-5 sm:p-6 text-center hover:shadow-medium hover:-translate-y-1 transition-all duration-300 cursor-pointer"
           data-aos="zoom-in"
           :data-aos-delay="index * 50"
           data-aos-duration="600"
         >
-          <div class="text-4xl mb-3">{{ platform.icon }}</div>
-          <div class="font-medium text-sm">{{ platform.name }}</div>
+          <div class="flex items-center justify-center h-12 sm:h-16 mb-3">
+            <img :src="platform.logo" :alt="platform.name" class="max-h-full max-w-full object-contain" />
+          </div>
+          <div class="font-medium text-sm sm:text-base">{{ platform.name }}</div>
         </div>
       </div>
     </div>
@@ -26,24 +28,17 @@
 </template>
 
 <script setup lang="ts">
+import { platforms } from '@/constants/platforms'
+
 interface Platform {
   id: string
-  icon: string
+  logo: string
   name: string
 }
 
-const platforms: Platform[] = [
-  { id: '1', icon: '🛒', name: 'Amazon' },
-  { id: '2', icon: '🏪', name: 'eBay' },
-  { id: '3', icon: '🛍️', name: 'Shopee' },
-  { id: '4', icon: '🌏', name: 'Lazada' },
-  { id: '5', icon: '📱', name: 'TikTok Shop' },
-  { id: '6', icon: '🎁', name: 'Temu' },
-  { id: '7', icon: '🌐', name: 'AliExpress' },
-  { id: '8', icon: '🏬', name: 'Walmart' },
-  { id: '9', icon: '🇯🇵', name: 'Rakuten' },
-  { id: '10', icon: '🇰🇷', name: 'Coupang' },
-  { id: '11', icon: '🇲🇽', name: 'Mercado Libre' },
-  { id: '12', icon: '➕', name: '更多平台' }
-]
+const displayPlatforms: Platform[] = platforms.map(p => ({
+  id: p.id,
+  logo: p.logo!,
+  name: p.name
+}))
 </script>
