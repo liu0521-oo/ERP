@@ -8,7 +8,6 @@
       <PlatformsSection />
       <CTASection />
     </main>
-
     <Footer />
     <FloatingContact />
   </div>
