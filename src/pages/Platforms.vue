@@ -14,8 +14,8 @@
               class="card p-6 hover:shadow-medium transition-all duration-300"
             >
               <div class="flex items-start justify-between mb-4">
-                <div class="w-14 h-14 bg-neutral-100 rounded-xl flex items-center justify-center">
-                  <span class="text-3xl">{{ platform.icon }}</span>
+                <div class="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-sm">
+                  <PlatformLogos :platform-name="platform.name" />
                 </div>
                 <span
                   :class="platform.status === 'connected' ? 'bg-green-100 text-green-700' : 'bg-neutral-100 text-neutral-500'"
@@ -119,5 +119,6 @@
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
 import FloatingContact from '@/components/FloatingContact.vue'
+import PlatformLogos from '@/components/PlatformLogos.vue'
 import { platforms } from '@/mock/platforms'
 </script>
