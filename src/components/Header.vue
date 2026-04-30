@@ -108,9 +108,8 @@ const menuItems: MenuItem[] = [
   { id: '1', label: '首页', path: '/' },
   { id: '2', label: '订单管理', path: '/orders' },
   { id: '3', label: '库存管理', path: '/inventory' },
-  { id: '4', label: '数据分析', path: '/analytics' },
-  { id: '5', label: '多平台对接', path: '/platforms' },
-  { id: '6', label: '关于我们', path: '/about' }
+  { id: '4', label: '多平台对接', path: '/platforms' },
+  { id: '5', label: '关于我们', path: '/about' }
 ]
 
 const handleScroll = () => {

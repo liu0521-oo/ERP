@@ -1,137 +1,57 @@
 import type { Inventory } from '@/types'
 
-export const inventory: Inventory[] = [
-  {
-    id: '1',
-    sku: 'SKU-CT-001',
-    name: '智能手表 Pro',
-    category: '电子产品',
-    stock: 245,
-    warehouse: '深圳仓',
-    minStock: 50,
-    unit: '台',
-    price: 199.99,
-    status: 'normal',
-    updateTime: '2024-12-27 10:00:00'
-  },
-  {
-    id: '2',
-    sku: 'SKU-CT-002',
-    name: '无线蓝牙耳机',
-    category: '电子产品',
-    stock: 18,
-    warehouse: '广州仓',
-    minStock: 30,
-    unit: '套',
-    price: 59.99,
-    status: 'low',
-    updateTime: '2024-12-27 09:30:00'
-  },
-  {
-    id: '3',
-    sku: 'SKU-CT-003',
-    name: '便携充电宝 10000mAh',
-    category: '电子产品',
-    stock: 567,
-    warehouse: '深圳仓',
-    minStock: 100,
-    unit: '个',
-    price: 29.99,
-    status: 'normal',
-    updateTime: '2024-12-27 08:45:00'
-  },
-  {
-    id: '4',
-    sku: 'SKU-CT-004',
-    name: '运动健身套装',
-    category: '服装配饰',
-    stock: 0,
-    warehouse: '东莞仓',
-    minStock: 50,
-    unit: '套',
-    price: 79.99,
-    status: 'out',
-    updateTime: '2024-12-27 08:00:00'
-  },
-  {
-    id: '5',
-    sku: 'SKU-CT-005',
-    name: '智能家居网关',
-    category: '智能家居',
-    stock: 123,
-    warehouse: '深圳仓',
-    minStock: 40,
-    unit: '个',
-    price: 89.99,
-    status: 'normal',
-    updateTime: '2024-12-27 07:30:00'
-  },
-  {
-    id: '6',
-    sku: 'SKU-CT-006',
-    name: 'LED台灯护眼版',
-    category: '家居用品',
-    stock: 12,
-    warehouse: '广州仓',
-    minStock: 20,
-    unit: '盏',
-    price: 45.99,
-    status: 'low',
-    updateTime: '2024-12-26 22:15:00'
-  },
-  {
-    id: '7',
-    sku: 'SKU-CT-007',
-    name: '不锈钢保温杯',
-    category: '家居用品',
-    stock: 432,
-    warehouse: '东莞仓',
-    minStock: 80,
-    unit: '个',
-    price: 24.99,
-    status: 'normal',
-    updateTime: '2024-12-26 21:00:00'
-  },
-  {
-    id: '8',
-    sku: 'SKU-CT-008',
-    name: '瑜伽垫防滑加厚',
-    category: '运动户外',
-    stock: 278,
-    warehouse: '深圳仓',
-    minStock: 60,
-    unit: '张',
-    price: 35.99,
-    status: 'normal',
-    updateTime: '2024-12-26 20:30:00'
-  },
-  {
-    id: '9',
-    sku: 'SKU-CT-009',
-    name: '无线充电器',
-    category: '电子产品',
-    stock: 8,
-    warehouse: '广州仓',
-    minStock: 25,
-    unit: '个',
-    price: 39.99,
-    status: 'low',
-    updateTime: '2024-12-26 19:45:00'
-  },
-  {
-    id: '10',
-    sku: 'SKU-CT-010',
-    name: '折叠背包旅行款',
-    category: '箱包配件',
-    stock: 156,
-    warehouse: '东莞仓',
-    minStock: 40,
-    unit: '个',
-    price: 49.99,
-    status: 'normal',
-    updateTime: '2024-12-26 18:20:00'
-  }
+const categories = ['电子产品', '服装配饰', '家居用品', '运动户外', '智能家居', '箱包配件']
+const warehouses = ['深圳仓', '广州仓', '东莞仓', '杭州仓', '上海仓']
+const baseProducts = [
+  { name: '智能手表', unit: '台', price: 199.99 },
+  { name: '无线蓝牙耳机', unit: '套', price: 59.99 },
+  { name: '便携充电宝', unit: '个', price: 29.99 },
+  { name: '运动健身套装', unit: '套', price: 79.99 },
+  { name: '智能家居网关', unit: '个', price: 89.99 },
+  { name: 'LED台灯', unit: '盏', price: 45.99 },
+  { name: '不锈钢保温杯', unit: '个', price: 24.99 },
+  { name: '瑜伽垫', unit: '张', price: 35.99 },
+  { name: '无线充电器', unit: '个', price: 39.99 },
+  { name: '折叠背包', unit: '个', price: 49.99 },
+  { name: '智能音箱', unit: '台', price: 129.99 },
+  { name: '蓝牙键盘', unit: '个', price: 69.99 },
+  { name: '鼠标垫', unit: '个', price: 19.99 },
+  { name: '数据线', unit: '根', price: 9.99 },
+  { name: '手机支架', unit: '个', price: 15.99 },
+  { name: '收纳盒', unit: '个', price: 25.99 },
+  { name: '坐垫', unit: '个', price: 49.99 },
+  { name: '窗帘', unit: '套', price: 129.99 },
+  { name: '抱枕', unit: '个', price: 39.99 },
+  { name: '地毯', unit: '张', price: 89.99 }
 ]
+
+export const inventory: Inventory[] = []
+
+for (let i = 1; i <= 28560; i++) {
+  const baseProduct = baseProducts[Math.floor(Math.random() * baseProducts.length)]
+  const category = categories[Math.floor(Math.random() * categories.length)]
+  const stock = Math.floor(Math.random() * 5000) + 10
+  const minStock = Math.floor(Math.random() * 100) + 20
+  const status = stock === 0 ? 'out' : stock < minStock ? 'low' : 'normal'
+  const num = i.toString().padStart(5, '0')
+  const catCode = category.substring(0, 2)
+  const hours = Math.floor(Math.random() * 24).toString().padStart(2, '0')
+  const minutes = Math.floor(Math.random() * 60).toString().padStart(2, '0')
+
+  inventory.push({
+    id: i.toString(),
+    sku: `SKU-${catCode}-${num}`,
+    name: `${baseProduct.name} ${i % 3 === 0 ? 'Pro' : i % 3 === 1 ? 'Plus' : 'Lite'}`,
+    category,
+    stock,
+    warehouse: warehouses[Math.floor(Math.random() * warehouses.length)],
+    minStock,
+    unit: baseProduct.unit,
+    price: baseProduct.price,
+    status,
+    updateTime: `2024-12-${Math.floor(Math.random() * 30 + 1).toString().padStart(2, '0')} ${hours}:${minutes}:00`
+  })
+}
 
 export const getInventoryStats = () => {
   return {
@@ -143,3 +63,19 @@ export const getInventoryStats = () => {
     totalValue: inventory.reduce((sum, i) => sum + (i.stock * i.price), 0)
   }
 }
+
+const formatScientific = (num: number): string => {
+  if (num >= 100000000) {
+    const value = num / 100000000
+    return value % 1 === 0 ? `${value}亿` : `${value.toFixed(2)}亿`
+  } else if (num >= 10000) {
+    const value = num / 10000
+    return value % 1 === 0 ? `${value}万` : `${value.toFixed(2)}万`
+  } else if (num >= 1000) {
+    const value = num / 1000
+    return value % 1 === 0 ? `${value}千` : `${value.toFixed(2)}千`
+  }
+  return num.toString()
+}
+
+export { formatScientific }

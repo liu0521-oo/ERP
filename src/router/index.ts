@@ -20,12 +20,6 @@ const routes = [
     meta: { title: '库存管理 - 桓晟' }
   },
   {
-    path: '/analytics',
-    name: 'Analytics',
-    component: () => import('@/pages/Analytics.vue'),
-    meta: { title: '数据分析 - 桓晟' }
-  },
-  {
     path: '/platforms',
     name: 'Platforms',
     component: () => import('@/pages/Platforms.vue'),

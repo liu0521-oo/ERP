@@ -8,7 +8,7 @@
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div
           v-for="(feature, index) in features"
           :key="feature.id"
@@ -50,12 +50,6 @@ const features: Feature[] = [
   },
   {
     id: '3',
-    icon: '📈',
-    title: '数据分析',
-    description: '可视化数据看板，多维度销售分析，精准预测销售趋势，辅助科学决策。'
-  },
-  {
-    id: '4',
     icon: '🔗',
     title: '平台对接',
     description: '支持全球主流电商平台一键对接，API无缝连接，数据实时同步，降低运营成本。'
