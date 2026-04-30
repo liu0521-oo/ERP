@@ -1,5 +1,5 @@
 <template>
-  <component :is="logoComponents[platformName]" class="w-10 h-10" />
+  <component :is="logoComponents[platformName as keyof typeof logoComponents]" class="w-10 h-10" />
 </template>
 
 <script setup lang="ts">
@@ -56,18 +56,6 @@ const platforms: Record<string, any> = {
     h('circle', { cx: '12', cy: '14', r: '2', fill: '#EE4D2D' })
   ]),
 
-  Lazada: () => h('svg', {
-    viewBox: '0 0 24 24',
-    fill: 'none',
-    xmlns: 'http://www.w3.org/2000/svg'
-  }, [
-    h('circle', { cx: '12', cy: '12', r: '10', fill: '#0F146D' }),
-    h('path', {
-      d: 'M7 9h10v6H7V9zm2 2v2h6v-2H9z',
-      fill: '#FF6B00'
-    })
-  ]),
-
   TikTok: () => h('svg', {
     viewBox: '0 0 24 24',
     fill: 'none',
@@ -94,89 +82,6 @@ const platforms: Record<string, any> = {
       'font-weight': 'bold',
       'font-family': 'sans-serif'
     }, 'T')
-  ]),
-
-  AliExpress: () => h('svg', {
-    viewBox: '0 0 24 24',
-    fill: 'none',
-    xmlns: 'http://www.w3.org/2000/svg'
-  }, [
-    h('rect', { x: '1', y: '1', width: '22', height: '22', rx: '4', fill: '#FF4747' }),
-    h('path', {
-      d: 'M6 8h3l1.5 5 1.5-5h3l-2.5 8H8.5L6 8zm7 0h5v2h-3v1h3v2h-3v1h3v2h-5V8z',
-      fill: 'white'
-    })
-  ]),
-
-  Walmart: () => h('svg', {
-    viewBox: '0 0 24 24',
-    fill: 'none',
-    xmlns: 'http://www.w3.org/2000/svg'
-  }, [
-    h('path', {
-      d: 'M12 2L2 12h20L12 2zm0 3.5l6.5 6.5h-13L12 5.5zM4 15h16v5H4v-5z',
-      fill: '#0071DC'
-    })
-  ]),
-
-  Rakuten: () => h('svg', {
-    viewBox: '0 0 24 24',
-    fill: 'none',
-    xmlns: 'http://www.w3.org/2000/svg'
-  }, [
-    h('circle', { cx: '12', cy: '12', r: '10', fill: '#BF0000' }),
-    h('text', {
-      x: '12',
-      y: '16',
-      'text-anchor': 'middle',
-      fill: 'white',
-      'font-size': '9',
-      'font-weight': 'bold',
-      'font-family': 'sans-serif'
-    }, 'R')
-  ]),
-
-  Coupang: () => h('svg', {
-    viewBox: '0 0 24 24',
-    fill: 'none',
-    xmlns: 'http://www.w3.org/2000/svg'
-  }, [
-    h('rect', { x: '2', y: '2', width: '20', height: '20', rx: '4', fill: '#004098' }),
-    h('text', {
-      x: '12',
-      y: '16',
-      'text-anchor': 'middle',
-      fill: 'white',
-      'font-size': '8',
-      'font-weight': 'bold',
-      'font-family': 'sans-serif'
-    }, 'C')
-  ]),
-
-  MercadoLibre: () => h('svg', {
-    viewBox: '0 0 24 24',
-    fill: 'none',
-    xmlns: 'http://www.w3.org/2000/svg'
-  }, [
-    h('rect', { x: '1', y: '1', width: '22', height: '22', rx: '4', fill: '#FFF159' }),
-    h('path', {
-      d: 'M6 8h4l1 4 1-4h4l-2 8H8L6 8z',
-      fill: '#2D3277'
-    })
-  ]),
-
-  '更多平台': () => h('svg', {
-    viewBox: '0 0 24 24',
-    fill: 'none',
-    xmlns: 'http://www.w3.org/2000/svg'
-  }, [
-    h('circle', { cx: '12', cy: '12', r: '10', fill: '#E5E7EB' }),
-    h('path', {
-      d: 'M12 7v10M7 12h10',
-      stroke: '#9CA3AF',
-      'stroke-width': '2',
-      'stroke-linecap': 'round'
-    })
   ])
 }
 
@@ -185,15 +90,8 @@ const logoComponents = {
   'Amazon': platforms.Amazon,
   'eBay': platforms.eBay,
   'Shopee': platforms.Shopee,
-  'Lazada': platforms.Lazada,
   'TikTok Shop': platforms.TikTok,
-  'Temu': platforms.Temu,
-  'AliExpress': platforms.AliExpress,
-  'Walmart': platforms.Walmart,
-  'Rakuten': platforms.Rakuten,
-  'Coupang': platforms.Coupang,
-  'Mercado Libre': platforms.MercadoLibre,
-  '更多平台': platforms['更多平台']
+  'Temu': platforms.Temu
 }
 
 defineProps<{

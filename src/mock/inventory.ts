@@ -63,19 +63,3 @@ export const getInventoryStats = () => {
     totalValue: inventory.reduce((sum, i) => sum + (i.stock * i.price), 0)
   }
 }
-
-const formatScientific = (num: number): string => {
-  if (num >= 100000000) {
-    const value = num / 100000000
-    return value % 1 === 0 ? `${value}亿` : `${value.toFixed(2)}亿`
-  } else if (num >= 10000) {
-    const value = num / 10000
-    return value % 1 === 0 ? `${value}万` : `${value.toFixed(2)}万`
-  } else if (num >= 1000) {
-    const value = num / 1000
-    return value % 1 === 0 ? `${value}千` : `${value.toFixed(2)}千`
-  }
-  return num.toString()
-}
-
-export { formatScientific }

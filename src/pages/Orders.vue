@@ -101,8 +101,8 @@
                       {{ order.amount.toLocaleString() }} {{ order.currency }}
                     </td>
                     <td class="px-6 py-4">
-                      <span :class="getStatusClass(order.status)" class="px-3 py-1 rounded-full text-xs font-medium">
-                        {{ getStatusText(order.status) }}
+                      <span :class="getOrderStatusClass(order.status)" class="px-3 py-1 rounded-full text-xs font-medium">
+                        {{ getOrderStatusText(order.status) }}
                       </span>
                     </td>
                     <td class="px-6 py-4 text-sm text-neutral-500 hidden sm:table-cell">{{ order.createTime }}</td>
@@ -130,6 +130,7 @@ import Footer from '@/components/Footer.vue'
 import FloatingContact from '@/components/FloatingContact.vue'
 import { orders } from '@/mock/orders'
 import type { Order } from '@/types'
+import { getOrderStatusClass, getOrderStatusText } from '@/utils/format'
 
 const filterStatus = ref('')
 
@@ -137,26 +138,4 @@ const filteredOrders = computed(() => {
   if (!filterStatus.value) return orders
   return orders.filter((o: Order) => o.status === filterStatus.value)
 })
-
-const getStatusClass = (status: string) => {
-  const classes = {
-    pending: 'bg-orange-100 text-orange-700',
-    processing: 'bg-blue-100 text-blue-700',
-    shipped: 'bg-green-100 text-green-700',
-    delivered: 'bg-purple-100 text-purple-700',
-    cancelled: 'bg-red-100 text-red-700'
-  }
-  return classes[status as keyof typeof classes] || 'bg-neutral-100 text-neutral-700'
-}
-
-const getStatusText = (status: string) => {
-  const texts = {
-    pending: '待处理',
-    processing: '处理中',
-    shipped: '已发货',
-    delivered: '已送达',
-    cancelled: '已取消'
-  }
-  return texts[status as keyof typeof texts] || status
-}
 </script>

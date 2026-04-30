@@ -13,21 +13,16 @@
               :key="platform.id"
               class="card p-6 hover:shadow-medium transition-all duration-300"
             >
-              <div class="flex items-start justify-between mb-4">
+              <div class="flex items-start mb-4">
                 <div class="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-sm">
-                  <PlatformLogos :platform-name="platform.name" />
+                  <img v-if="platform.logo" :src="platform.logo" :alt="platform.name" class="max-h-full max-w-full object-contain" />
+                  <PlatformLogos v-else :platform-name="platform.name" />
                 </div>
-                <span
-                  :class="platform.status === 'connected' ? 'bg-green-100 text-green-700' : 'bg-neutral-100 text-neutral-500'"
-                  class="px-3 py-1 rounded-full text-xs font-medium"
-                >
-                  {{ platform.status === 'connected' ? '已连接' : '未连接' }}
-                </span>
               </div>
 
               <h3 class="text-lg font-semibold mb-2">{{ platform.name }}</h3>
 
-              <div class="space-y-2 mb-6">
+              <div class="space-y-2">
                 <div class="flex justify-between text-sm">
                   <span class="text-neutral-500">今日订单</span>
                   <span class="font-medium">{{ platform.ordersToday.toLocaleString() }}</span>
@@ -37,13 +32,6 @@
                   <span class="font-medium">{{ platform.ordersTotal.toLocaleString() }}</span>
                 </div>
               </div>
-
-              <button
-                disabled
-                class="w-full py-3 rounded-xl font-medium transition-all duration-300 opacity-50 cursor-not-allowed bg-neutral-100 text-neutral-400 hover:bg-neutral-100"
-              >
-                {{ platform.status === 'connected' ? '断开连接' : '立即连接' }}
-              </button>
             </div>
           </div>
 
