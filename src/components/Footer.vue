@@ -38,8 +38,14 @@
 
     <div class="border-t border-neutral-800">
       <div class="container py-6">
-        <div class="flex flex-col sm:flex-row items-center justify-between text-sm text-neutral-500">
-          <p>&copy; 2024 桓晟. All rights reserved.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-neutral-500">
+          <p>&copy; 2026 桓晟. All rights reserved.</p>
+          <a
+            href="https://beian.miit.gov.cn/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-neutral-300 transition-colors"
+          >豫ICP备2026016064号-1</a>
         </div>
       </div>
     </div>

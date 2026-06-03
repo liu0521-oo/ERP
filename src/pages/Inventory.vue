@@ -220,37 +220,4 @@ const categoryStats = computed(() => {
     count: inventory.filter(i => i.category === cat).length
   })).sort((a, b) => b.count - a.count)
 })
-
-const formatNumber = (num: number): string => {
-  if (num >= 100000000) {
-    const value = num / 100000000
-    return value % 1 === 0 ? `${value}亿` : `${value.toFixed(2)}亿`
-  } else if (num >= 10000) {
-    const value = num / 10000
-    return value % 1 === 0 ? `${value}万` : `${value.toFixed(2)}万`
-  } else if (num >= 1000) {
-    const value = num / 1000
-    return value % 1 === 0 ? `${value}千` : `${value.toFixed(2)}千`
-  }
-  return num.toString()
-}
-
-const warehouseStats = computed(() => {
-  const counts = warehouses.map(wh => ({
-    name: wh,
-    count: inventory.filter(i => i.warehouse === wh).length
-  }))
-  const maxCount = Math.max(...counts.map(c => c.count))
-  return counts.map(c => ({
-    ...c,
-    percent: (c.count / maxCount) * 100
-  }))
-})
-
-const categoryStats = computed(() => {
-  return categories.map(cat => ({
-    name: cat,
-    count: inventory.filter(i => i.category === cat).length
-  })).sort((a, b) => b.count - a.count)
-})
 </script>
